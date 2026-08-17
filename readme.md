@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-  <img src="https://media1.tenor.com/m/lNGzOkSRLcsAAAAC/riko-sakurauchi-%E6%A1%9C%E5%86%85-%E6%A2%A8%E5%AD%90.gif" width="250" alt="Riko Sakurauchi playing piano" />
+  <img src="https://media1.tenor.com/m/lNGzOkSRLcsAAAAC/riko-sakurauchi-%E6%A1%9C%E5%86%85-%E6%A2%A8%E5%AD%90.gif" width="400" alt="Riko Sakurauchi playing piano" />
 </div>
 <br />
 
@@ -76,8 +76,12 @@ Beyond building software and games, I actively play and analyze mechanics, world
 
 ## 🤝 Let's Connect
 <div align="center">
-  <a href="https://github.com/Rytsia1">
-    <img src="https://img.shields.io/badge/GitHub-Rytsia1-7A1030?style=for-the-badge&logo=github&logoColor=white" alt="GitHub - Rytsia1" />
+  <!-- Jangan lupa ganti URL di bawah ini dengan link aslimu -->
+  <a href="mailto:email_kamu@domain.com">
+    <img src="https://img.shields.io/badge/Email-DB3961?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://linkedin.com/in/username_kamu">
+    <img src="https://img.shields.io/badge/LinkedIn-FF9EAC?style=for-the-badge&logo=linkedin&logoColor=black" alt="LinkedIn" />
   </a>
   <br /><br />
   <i>Feel free to reach out for collaborations or to discuss development, game design, and fintech!</i>
