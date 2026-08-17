@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-  <img src="https://media1.tenor.com/m/lNGzOkSRLcsAAAAC/riko-sakurauchi-%E6%A1%9C%E5%86%85-%E6%A2%A8%E5%AD%90.gif" width="400" alt="Riko Sakurauchi playing piano" />
+  <img src="https://media1.tenor.com/m/lNGzOkSRLcsAAAAC/riko-sakurauchi-%E6%A1%9C%E5%86%85-%E6%A2%A8%E5%AD%90.gif" width="500" alt="Riko Sakurauchi playing piano" />
 </div>
 <br />
 
