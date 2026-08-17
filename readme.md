@@ -3,7 +3,7 @@
 
 <!-- Animated Typing Intro -->
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF9EAC&center=true&vCenter=true&width=900&lines=Always+learning%2C+always+creating+%F0%9F%8C%B8;It+is+only+with+the+heart+that+one+can+see+rightly%3A+what+is+essential+is+invisible+to+the+eye.;Nothing+will+get+done+if+you+complain+about+it;Riko-chan+Laser+Beam!" alt="Typing animation of Dio's quotes" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF9EAC&center=true&vCenter=true&width=750&lines=%F0%9F%8C%B8+Always+learning%2C+always+creating+%F0%9F%8C%B8;%F0%9F%8C%B8+Nothing+will+get+done+if+you+complain+about+it+%F0%9F%8C%B8;%F0%9F%8C%B8+Riko-chan+Laser+Beam!+%F0%9F%8C%B8" alt="Typing animation of Dio's quotes" />
 </div>
 
 <div align="center">
