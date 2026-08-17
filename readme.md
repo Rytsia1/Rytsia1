@@ -2,6 +2,11 @@
 <h3 align="center">🎹 Game Technology Student | Software Developer, Quant & Fintech Enthusiast 🎼</h3>
 
 <div align="center">
+  <img src="https://media1.tenor.com/m/lNGzOkSRLcsAAAAC/riko-sakurauchi-%E6%A1%9C%E5%86%85-%E6%A2%A8%E5%AD%90.gif" width="250" alt="Riko Sakurauchi" />
+</div>
+<br>
+
+<div align="center">
   <!-- Primary & Secondary Palette Badges -->
   <img src="https://img.shields.io/badge/Python-DB3961?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
   <img src="https://img.shields.io/badge/JavaScript-FF9EAC?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
@@ -28,6 +33,28 @@
 
 ## 🎮 Gaming & Analysis
 Beyond building software and games, I actively play and analyze mechanics, world-building, and progression strategies in RPGs and action games. I have a deep appreciation for the *Persona* series (especially *Persona 4*), and my frequent subjects of analysis include *Fate/Grand Order*, *Cyberpunk 2077*, and *Elden Ring*.
+
+---
+
+<h2 align="center">🏆 GitHub Stats & Trophies</h2>
+
+<!-- Stats & Streak Side-by-Side -->
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Rytsia1&show_icons=true&bg_color=0d1117&title_color=FF9EAC&text_color=FFC5DF&icon_color=E9A9E8&border_color=7A1030&border_radius=10" height="195" alt="Dio's GitHub Stats" />
+  <img src="https://streak-stats.demolab.com/?user=Rytsia1&background=0d1117&border=7A1030&stroke=DB3961&ring=E9A9E8&fire=FF8B8B&currStreakNum=FF9EAC&currStreakLabel=FFC5DF&sideNums=FFC5DF&sideLabels=FFC5DF&dates=FFC5DF&border_radius=10" height="195" alt="Dio's GitHub Streak" />
+</div>
+<br>
+
+<!-- Activity Graph -->
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Rytsia1&bg_color=0d1117&color=FFC5DF&line=DB3961&point=FF9EAC&area=true&hide_border=true&radius=10" width="100%" alt="Dio's Contribution Graph" />
+</div>
+<br>
+
+<!-- GitHub Trophies -->
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Rytsia1&theme=radical&column=7&margin-w=15&margin-h=15&no-bg=true" alt="Dio's Trophies" />
+</div>
 
 ---
 <div align="center">
