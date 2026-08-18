@@ -1,4 +1,4 @@
-<h1 align="center">🌸 Hi, I'm Dio Stania Adinata 🌸</h1>
+<h1 align="center">🌸 Hi, I'm Rytsia1 🌸</h1>
 <h3 align="center">🎹 Game Technology Student | Software Developer, Quant & Fintech Enthusiast 🎼</h3>
 
 <!-- Animated Typing Intro -->
@@ -29,17 +29,14 @@
 * I am a Game Technology student at the Electronics Engineering Polytechnic Institute of Surabaya (PENS).
 * I recently concluded a student exchange program at Shandong University of Science and Technology (03/2026 – 08/2026).
 * While my foundation is in game development and bridging programming with 3D design, my interests heavily span broader application development, quantitative finance, and fintech.
-* I value a quiet start to the day, often walking 2.2km to class to enjoy the peaceful morning environment before jumping into coding and development.
+* I am a huge fan of Riko Sakurauchi from *Love Live! Sunshine!!* (which explains the Light Orchid and Sakura Pink aesthetic of this profile!).
+* I take my sleep very seriously..
+* I'll happily walk 2.2km to my morning classes just to soak in the peaceful environment.
 
-## 🌱 Current Focus
-* 🎮 Sharpening my game development craft across **Godot** and **Unity**.
-* 💻 Expanding beyond games into broader **application development**.
-* 📊 Diving deeper into **quantitative analysis** and **fintech systems** — where math meets markets.
-
-## 🏆 Milestones & Achievements
-* 🎮 **Gameseed 2025:** Top 60 placement in the national game development competition.
-* 🥗 **KMIPN 2025:** Finalist for developing an educational nutrition game.
-* 🌏 **ITE SCALE Programme 2025:** Recipient of the Temasek Foundation Award.
+## 🌱 What I'm Learning Right Now
+* 🎮 Making games and prototyping mechanics using **Godot** and **Unity**.
+* 💻 Writing code for general **application development** outside of just gaming.
+* 📊 Studying **quantitative analysis** and **fintech** because I'm really interested in how programming and math apply to financial systems.
 
 ## 🎮 Gaming & Analysis
 Beyond building software and games, I actively play and analyze mechanics, world-building, and progression strategies in RPGs and action games. I have a deep appreciation for the *Persona* series (especially *Persona 4*), and my frequent subjects of analysis include *Fate/Grand Order*, *Cyberpunk 2077*, and *Elden Ring*.
