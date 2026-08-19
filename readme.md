@@ -74,10 +74,19 @@ Beyond building software and games, I actively play and analyze mechanics, world
 
 ---
 
-## 🤝 Let's Connect
+## 🔍 You Can Find Me at
 <div align="center">
-  <a href="https://github.com/Rytsia1">
-    <img src="https://img.shields.io/badge/GitHub-Rytsia1-7A1030?style=for-the-badge&logo=github&logoColor=white" alt="GitHub - Rytsia1" />
+  <a href="https://www.linkedin.com/in/dioadinata/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://www.instagram.com/distania_9/" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  </a>
+  <a href="mailto:dioadinata520@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+  </a>
+  <a href="https://github.com/Rytsia1" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
   <br /><br />
   <i>Feel free to reach out for collaborations or to discuss development, game design, and fintech!</i>
