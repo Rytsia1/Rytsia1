@@ -1,13 +1,13 @@
-<h1 align="center">🌸 Hi, I'm Dio Stania Adinata 🌸</h1>
+<h1 align="center">🌸 Hi, I'm Rytsia1 🌸</h1>
 <h3 align="center">🎹 Game Technology Student | Software Developer, Quant & Fintech Enthusiast 🎼</h3>
 
 <!-- Animated Typing Intro -->
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF9EAC&center=true&vCenter=true&width=600&lines=Building+games+%26+interactive+worlds+%F0%9F%8E%AE;Bridging+code+with+3D+design+%F0%9F%8E%A8;Exploring+quant+%26+fintech+%F0%9F%93%88;Always+learning%2C+always+creating+%F0%9F%8C%B8" alt="Typing animation of Dio's interests" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF9EAC&center=true&vCenter=true&width=750&lines=%F0%9F%8C%B8+Always+learning%2C+always+creating+%F0%9F%8C%B8;%F0%9F%8C%B8+Nothing+will+get+done+if+you+complain+about+it+%F0%9F%8C%B8;%F0%9F%8C%B8+Riko-chan+Laser+Beam!+%F0%9F%8C%B8" alt="Typing animation of Dio's quotes" />
 </div>
 
 <div align="center">
-  <img src="https://media1.tenor.com/m/lNGzOkSRLcsAAAAC/riko-sakurauchi-%E6%A1%9C%E5%86%85-%E6%A2%A8%E5%AD%90.gif" width="250" alt="Riko Sakurauchi playing piano" />
+  <img src="https://media1.tenor.com/m/lNGzOkSRLcsAAAAC/riko-sakurauchi-%E6%A1%9C%E5%86%85-%E6%A2%A8%E5%AD%90.gif" width="600" alt="Riko Sakurauchi playing piano" />
 </div>
 <br />
 
@@ -29,17 +29,14 @@
 * I am a Game Technology student at the Electronics Engineering Polytechnic Institute of Surabaya (PENS).
 * I recently concluded a student exchange program at Shandong University of Science and Technology (03/2026 – 08/2026).
 * While my foundation is in game development and bridging programming with 3D design, my interests heavily span broader application development, quantitative finance, and fintech.
-* I value a quiet start to the day, often walking 2.2km to class to enjoy the peaceful morning environment before jumping into coding and development.
+* I am a huge fan of Riko Sakurauchi from *Love Live! Sunshine!!* (which explains the Light Orchid and Sakura Pink aesthetic of this profile!).
+* I take my sleep very seriously..
+* I'll happily walk 2.2km to my morning classes just to soak in the peaceful environment.
 
-## 🌱 Current Focus
-* 🎮 Sharpening my game development craft across **Godot** and **Unity**.
-* 💻 Expanding beyond games into broader **application development**.
-* 📊 Diving deeper into **quantitative analysis** and **fintech systems** — where math meets markets.
-
-## 🏆 Milestones & Achievements
-* 🎮 **Gameseed 2025:** Top 60 placement in the national game development competition.
-* 🥗 **KMIPN 2025:** Finalist for developing an educational nutrition game.
-* 🌏 **ITE SCALE Programme 2025:** Recipient of the Temasek Foundation Award.
+## 🌱 What I'm Learning Right Now
+* 🎮 Making games and prototyping mechanics using **Godot** and **Unity**.
+* 💻 Writing code for general **application development** outside of just gaming.
+* 📊 Studying **quantitative analysis** and **fintech** because I'm really interested in how programming and math apply to financial systems.
 
 ## 🎮 Gaming & Analysis
 Beyond building software and games, I actively play and analyze mechanics, world-building, and progression strategies in RPGs and action games. I have a deep appreciation for the *Persona* series (especially *Persona 4*), and my frequent subjects of analysis include *Fate/Grand Order*, *Cyberpunk 2077*, and *Elden Ring*.
@@ -76,6 +73,7 @@ Beyond building software and games, I actively play and analyze mechanics, world
 
 ## 🔍 You Can Find Me at
 <div align="center">
+<<<<<<< HEAD
   <a href="https://www.linkedin.com/in/dioadinata/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
@@ -87,6 +85,14 @@ Beyond building software and games, I actively play and analyze mechanics, world
   </a>
   <a href="https://github.com/Rytsia1" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+=======
+  <!-- Jangan lupa ganti URL di bawah ini dengan link aslimu -->
+  <a href="mailto:email_kamu@domain.com">
+    <img src="https://img.shields.io/badge/Email-DB3961?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://linkedin.com/in/username_kamu">
+    <img src="https://img.shields.io/badge/LinkedIn-FF9EAC?style=for-the-badge&logo=linkedin&logoColor=black" alt="LinkedIn" />
+>>>>>>> 47fc4c42da99d80fde64884da6c0ffd1697d1e1a
   </a>
   <br /><br />
   <i>Feel free to reach out for collaborations or to discuss development, game design, and fintech!</i>
