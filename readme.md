@@ -47,14 +47,14 @@ Beyond building software and games, I actively play and analyze mechanics, world
 
 <!-- Stats & Top Languages Side-by-Side -->
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Rytsia1&show_icons=true&bg_color=0d1117&title_color=FF9EAC&text_color=FFC5DF&icon_color=E9A9E8&border_color=7A1030&border_radius=10" height="195" alt="Dio's GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rytsia1&layout=donut&bg_color=0d1117&title_color=FF9EAC&text_color=FFC5DF&border_color=7A1030&border_radius=10" height="195" alt="Dio's Top Languages" />
+  <img src="https://github-readme-stats-fast.vercel.app/api?username=Rytsia1&show_icons=true&bg_color=0d1117&title_color=FF9EAC&text_color=FFC5DF&icon_color=E9A9E8&border_color=7A1030&border_radius=10" height="195" alt="Dio's GitHub Stats" />
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=Rytsia1&layout=donut&bg_color=0d1117&title_color=FF9EAC&text_color=FFC5DF&border_color=7A1030&border_radius=10" height="195" alt="Dio's Top Languages" />
 </div>
 <br />
 
 <!-- Streak Stats -->
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=Rytsia1&background=0d1117&border=7A1030&stroke=DB3961&ring=E9A9E8&fire=FF8B8B&currStreakNum=FF9EAC&currStreakLabel=FFC5DF&sideNums=FFC5DF&sideLabels=FFC5DF&dates=FFC5DF&border_radius=10" height="195" alt="Dio's GitHub Streak" />
+  <img src="https://github-readme-streak-stats-eight.vercel.app/?user=Rytsia1&background=0d1117&border=7A1030&stroke=DB3961&ring=E9A9E8&fire=FF8B8B&currStreakNum=FF9EAC&currStreakLabel=FFC5DF&sideNums=FFC5DF&sideLabels=FFC5DF&dates=FFC5DF&border_radius=10" height="195" alt="Dio's GitHub Streak" />
 </div>
 <br />
 
@@ -66,14 +66,13 @@ Beyond building software and games, I actively play and analyze mechanics, world
 
 <!-- GitHub Trophies -->
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Rytsia1&theme=radical&column=7&margin-w=15&margin-h=15&no-bg=true" alt="Dio's Trophies" />
+  <img src="https://github-profile-trophy-nu.vercel.app/?username=Rytsia1&theme=radical&column=7&margin-w=15&margin-h=15&no-bg=true" alt="Dio's Trophies" />
 </div>
 
 ---
 
 ## 🔍 You Can Find Me at
 <div align="center">
-<<<<<<< HEAD
   <a href="https://www.linkedin.com/in/dioadinata/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
@@ -85,14 +84,6 @@ Beyond building software and games, I actively play and analyze mechanics, world
   </a>
   <a href="https://github.com/Rytsia1" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-=======
-  <!-- Jangan lupa ganti URL di bawah ini dengan link aslimu -->
-  <a href="mailto:email_kamu@domain.com">
-    <img src="https://img.shields.io/badge/Email-DB3961?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  <a href="https://linkedin.com/in/username_kamu">
-    <img src="https://img.shields.io/badge/LinkedIn-FF9EAC?style=for-the-badge&logo=linkedin&logoColor=black" alt="LinkedIn" />
->>>>>>> 47fc4c42da99d80fde64884da6c0ffd1697d1e1a
   </a>
   <br /><br />
   <i>Feel free to reach out for collaborations or to discuss development, game design, and fintech!</i>
