@@ -92,6 +92,13 @@ Beyond building software and games, I actively play and analyze mechanics, world
 ---
 
 <div align="center">
+  <img src="https://media1.tenor.com/m/UYqit_ZJB74AAAAd/riko-sakurauchi-love-live.gif" width="600" alt="Riko Sakurauchi Megaphone" />
+</div>
+<br />
+
+---
+
+<div align="center">
   <img src="https://komarev.com/ghpvc/?username=Rytsia1&color=DB3961&style=for-the-badge&label=Profile+Views" alt="Profile view counter" />
   <br /><br />
   <b>🌸 Let's create something beautiful! 🌸</b>
