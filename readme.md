@@ -88,11 +88,11 @@ Beyond building software and games, I actively play and analyze mechanics, world
   <br /><br />
   <i>Feel free to reach out for collaborations or to discuss development, game design, and fintech!</i>
 </div>
+<br />
 
----
 
 <div align="center">
-  <img src="https://media1.tenor.com/m/UYqit_ZJB74AAAAd/riko-sakurauchi-love-live.gif" width="600" alt="Riko Sakurauchi Megaphone" />
+  <img src="https://media1.tenor.com/m/UYqit_ZJB74AAAAd/riko-sakurauchi-love-live.gif" width="500" alt="Riko Sakurauchi Megaphone" />
 </div>
 <br />
 
