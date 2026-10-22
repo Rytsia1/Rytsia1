@@ -1,11 +1,6 @@
 <h1 align="center">🌸 Hi, I'm Rytsia1 🌸</h1>
 <h3 align="center">🎹 Game Technology Student | Software Developer, Quant & Fintech Enthusiast 🎼</h3>
 
-<!-- Animated Typing Intro -->
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF9EAC&center=true&vCenter=true&width=750&lines=%F0%9F%8C%B8+Always+learning%2C+always+creating+%F0%9F%8C%B8;%F0%9F%8C%B8+Nothing+will+get+done+if+you+complain+about+it+%F0%9F%8C%B8;%F0%9F%8C%B8+Riko-chan+Laser+Beam!+%F0%9F%8C%B8" alt="Typing animation of Dio's quotes" />
-</div>
-
 <div align="center">
   <img src="https://media1.tenor.com/m/lNGzOkSRLcsAAAAC/riko-sakurauchi-%E6%A1%9C%E5%86%85-%E6%A2%A8%E5%AD%90.gif" width="600" alt="Riko Sakurauchi playing piano" />
 </div>
