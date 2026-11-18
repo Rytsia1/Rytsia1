@@ -65,17 +65,23 @@ query($login: String!, $yearStart: DateTime!, $now: DateTime!) {
     pullRequests {
       totalCount
     }
-    openPRs: pullRequests(
-      first: 1
-      states: OPEN
-      orderBy: { field: CREATED_AT, direction: DESC }
+    latestPushedRepos: repositories(
+      first: 5
+      ownerAffiliations: OWNER
+      orderBy: { field: PUSHED_AT, direction: DESC }
     ) {
       nodes {
-        title
-        number
-        createdAt
-        repository {
-          nameWithOwner
+        nameWithOwner
+        pushedAt
+        defaultBranchRef {
+          name
+          target {
+            ... on Commit {
+              messageHeadline
+              abbreviatedOid
+              committedDate
+            }
+          }
         }
       }
     }
@@ -235,6 +241,96 @@ def fetch_github_graphql(
     return data
 
 
+def fetch_latest_push(username: str, token: str | None = None) -> dict[str, str] | None:
+    """Fetch the user's most recent non-bot PushEvent from the GitHub REST API."""
+    headers = {"Accept": "application/vnd.github+json"}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    try:
+        resp = requests.get(
+            f"https://api.github.com/users/{username}/events/public?per_page=30",
+            headers=headers,
+            timeout=15,
+        )
+        if not resp.ok:
+            return None
+        events = resp.json()
+    except Exception:
+        return None
+
+    push_events = sorted(
+        (ev for ev in events if ev.get("type") == "PushEvent"),
+        key=lambda ev: ev.get("created_at", ""),
+        reverse=True,
+    )
+
+    for ev in push_events:
+        actor = (ev.get("actor") or {}).get("login", "")
+        if actor.lower() == "github-actions[bot]":
+            continue
+
+        repo_name = (ev.get("repo") or {}).get("name", "")
+        payload = ev.get("payload") or {}
+        ref = payload.get("ref", "")
+        branch = ref.removeprefix("refs/heads/") or "main"
+        head_sha = payload.get("head", "")
+        pushed_at = ev.get("created_at", "")
+
+        commits = payload.get("commits") or []
+        headline = ""
+        if commits:
+            headline = commits[-1].get("message", "").splitlines()[0].strip()
+            head_sha = commits[-1].get("sha", head_sha)
+        elif repo_name and head_sha:
+            try:
+                c_resp = requests.get(
+                    f"https://api.github.com/repos/{repo_name}/commits/{head_sha}",
+                    headers=headers,
+                    timeout=10,
+                )
+                if c_resp.ok:
+                    c_data = c_resp.json()
+                    author_login = (c_data.get("author") or {}).get("login", "")
+                    if author_login.lower() == "github-actions[bot]":
+                        continue
+                    msg = (c_data.get("commit") or {}).get("message", "")
+                    headline = msg.splitlines()[0].strip()
+            except Exception:
+                pass
+
+        if headline == "chore: update rpg-profile.svg":
+            continue
+
+        return {
+            "repo": repo_name,
+            "branch": branch,
+            "sha": head_sha[:7] if head_sha else "HEAD",
+            "message": headline or f"Pushed updates to {branch}",
+            "pushed_at": pushed_at,
+        }
+
+    return None
+
+
+def latest_push_from_repos(repo_nodes: list[dict[str, Any]]) -> dict[str, str] | None:
+    """Fallback to the most recently pushed owned repository from GraphQL."""
+    for repo in repo_nodes:
+        branch_ref = repo.get("defaultBranchRef") or {}
+        target = branch_ref.get("target") or {}
+        headline = (target.get("messageHeadline") or "").strip()
+        if headline == "chore: update rpg-profile.svg":
+            continue
+        return {
+            "repo": repo.get("nameWithOwner", ""),
+            "branch": branch_ref.get("name") or "main",
+            "sha": target.get("abbreviatedOid") or "HEAD",
+            "message": headline or "Pushed repository updates",
+            "pushed_at": target.get("committedDate") or repo.get("pushedAt") or "",
+        }
+    return None
+
+
 def collect_live_stats(username: str, token: str) -> dict[str, Any]:
     """Fetch real-time profile, language, PR, and contribution data."""
     now = datetime.now(timezone.utc)
@@ -310,8 +406,9 @@ def collect_live_stats(username: str, token: str) -> dict[str, Any]:
     best_streak_year, days_questing_year = compute_streaks(year_weeks)
     best_streak = max(best_streak_rolling, best_streak_year)
 
-    open_pr_nodes = user.get("openPRs", {}).get("nodes", [])
-    latest_open_pr = open_pr_nodes[0] if open_pr_nodes else None
+    latest_push = fetch_latest_push(username, token) or latest_push_from_repos(
+        user.get("latestPushedRepos", {}).get("nodes", [])
+    )
 
     return {
         "username": user["login"],
@@ -325,7 +422,7 @@ def collect_live_stats(username: str, token: str) -> dict[str, Any]:
         "days_questing": days_questing_year,
         "year_xp": year_xp,
         "top_languages": top_languages,
-        "latest_open_pr": latest_open_pr,
+        "latest_push": latest_push,
         "recent_weeks": rolling_weeks[-20:],
         "year_number": now.year,
         "source": "live",
@@ -364,6 +461,14 @@ def build_fallback_stats(username: str) -> dict[str, Any]:
             days.append({"contributionCount": val, "date": "", "weekday": d})
         recent_weeks.append({"contributionDays": days})
 
+    latest_push = fetch_latest_push(username) or {
+        "repo": f"{username}/quant-alchemy",
+        "branch": "main",
+        "sha": "a1b2c3d",
+        "message": "feat: implement adaptive quant momentum backtester",
+        "pushed_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+    }
+
     return {
         "username": username,
         "display_name": DEFAULT_DISPLAY_NAME,
@@ -382,12 +487,7 @@ def build_fallback_stats(username: str) -> dict[str, Any]:
             {"name": "GDScript", "color": "#355570", "bytes": 110000, "pct": 11.0},
             {"name": "JavaScript", "color": "#f1e05a", "bytes": 70000, "pct": 7.0},
         ],
-        "latest_open_pr": {
-            "title": "feat: implement adaptive quant momentum backtester",
-            "number": 42,
-            "createdAt": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "repository": {"nameWithOwner": f"{username}/quant-alchemy"},
-        },
+        "latest_push": latest_push,
         "recent_weeks": recent_weeks,
         "year_number": now.year,
         "source": "fallback",
@@ -478,12 +578,12 @@ def render_svg(stats: dict[str, Any], avatar_uri: str | None) -> str:
 
     # Compute 1..20 attributes
     attributes = [
-        ("STR", "COMMITS", log_stat(stats["commits_year"], 1500), f"{stats['commits_year']:,} commits this year"),
-        ("DEX", "PULL REQ", log_stat(stats["total_prs"], 250), f"{stats['total_prs']:,} total PRs"),
-        ("INT", "REVIEWS", log_stat(stats["pr_reviews"], 200), f"{stats['pr_reviews']:,} PR reviews"),
-        ("WIS", "ACC AGE", clamp_stat(1 + 19 * min(1.0, stats["account_age_years"] / 10.0)), f"{stats['account_age_years']:.1f} years"),
-        ("CHA", "FOLLOWS", log_stat(stats["followers"], 200), f"{stats['followers']:,} followers"),
-        ("CON", "STREAK", log_stat(stats["best_streak"], 120), f"{stats['best_streak']} day best streak"),
+        ("STR", log_stat(stats["commits_year"], 1500), f"{stats['commits_year']:,} commits this year"),
+        ("DEX", log_stat(stats["total_prs"], 250), f"{stats['total_prs']:,} total PRs"),
+        ("INT", log_stat(stats["pr_reviews"], 200), f"{stats['pr_reviews']:,} PR reviews"),
+        ("WIS", clamp_stat(1 + 19 * min(1.0, stats["account_age_years"] / 10.0)), f"{stats['account_age_years']:.1f} years"),
+        ("CHA", log_stat(stats["followers"], 200), f"{stats['followers']:,} followers"),
+        ("CON", log_stat(stats["best_streak"], 120), f"{stats['best_streak']} day best streak"),
     ]
 
     level, in_level_xp, next_span, xp_pct = compute_level_and_xp(stats["year_xp"])
@@ -492,27 +592,26 @@ def render_svg(stats: dict[str, Any], avatar_uri: str | None) -> str:
 
     # Build attribute bars (20 discrete blocks per stat)
     attr_svg_parts: list[str] = []
-    for row_idx, (code, label, score, tooltip) in enumerate(attributes):
+    for row_idx, (code, score, tooltip) in enumerate(attributes):
         row_y = 224 + row_idx * 29
         attr_svg_parts.append(
             f'<g class="stat-row"><title>{html.escape(tooltip)}</title>'
             f'<text x="38" y="{row_y}" class="stat-code">{code}</text>'
-            f'<text x="74" y="{row_y}" class="stat-hint">{label}</text>'
         )
         for col_idx in range(20):
-            bx = 140 + col_idx * 16
+            bx = 86 + col_idx * 19
             by = row_y - 11
             if col_idx < score:
                 delay = row_idx * 0.08 + col_idx * 0.025
                 fill = "#4ade80" if col_idx >= 15 else "#22c55e"
                 attr_svg_parts.append(
-                    f'<rect x="{bx}" y="{by}" width="12" height="13" rx="2.5" '
+                    f'<rect x="{bx}" y="{by}" width="15" height="13" rx="2.5" '
                     f'fill="{fill}" class="stat-block" '
                     f'style="animation-delay:{delay:.3f}s"/>'
                 )
             else:
                 attr_svg_parts.append(
-                    f'<rect x="{bx}" y="{by}" width="12" height="13" rx="2.5" '
+                    f'<rect x="{bx}" y="{by}" width="15" height="13" rx="2.5" '
                     f'fill="#192231" stroke="#233044" stroke-width="0.75"/>'
                 )
         attr_svg_parts.append(
@@ -558,20 +657,21 @@ def render_svg(stats: dict[str, Any], avatar_uri: str | None) -> str:
             '<text x="564" y="255" class="muted-text">NO OWNED REPOSITORY LANGUAGES FOUND</text>'
         )
 
-    # Quest Log (1 latest open PR)
-    pr = stats.get("latest_open_pr")
-    if pr:
-        repo_name = html.escape(truncate(pr["repository"]["nameWithOwner"], 34))
-        pr_num = int(pr["number"])
-        pr_created = html.escape(str(pr.get("createdAt", ""))[:10] or "ACTIVE")
-        title_lines = wrap_text(pr["title"], width=39, max_lines=2)
-        quest_badge = "[ ACTIVE QUEST // OPEN PR ]"
-        quest_sub = f"{repo_name}  #{pr_num}"
-        quest_status_left = "STATUS: IN PROGRESS"
-        quest_status_right = f"OPENED: {pr_created}"
+    # Quest Log (Latest push)
+    push = stats.get("latest_push")
+    if push:
+        repo_name = html.escape(truncate(push["repo"], 32))
+        branch_name = html.escape(truncate(push.get("branch", "main"), 18))
+        commit_sha = html.escape(push.get("sha", "HEAD")[:7])
+        pushed_date = html.escape(str(push.get("pushed_at", ""))[:10] or "RECENT")
+        title_lines = wrap_text(push["message"], width=39, max_lines=2)
+        quest_badge = "[ ACTIVE QUEST // LATEST PUSH ]"
+        quest_sub = f"{repo_name}  @{commit_sha}"
+        quest_status_left = f"BRANCH: {branch_name}"
+        quest_status_right = f"PUSHED: {pushed_date}"
     else:
         quest_badge = "[ SIDE QUEST // EXPLORATION ]"
-        quest_sub = f"{username} // NO OPEN PULL REQUESTS"
+        quest_sub = f"{username} // NO RECENT PUSHES"
         title_lines = ["Grinding commits, leveling skills,", "and forging new repositories."]
         quest_status_left = "STATUS: READY FOR QUEST"
         quest_status_right = "PARTY: SOLO"
@@ -658,7 +758,6 @@ def render_svg(stats: dict[str, Any], avatar_uri: str | None) -> str:
     .xp-pct {{ fill: #4ade80; font-size: 11px; font-weight: 700; }}
     .section-title {{ fill: #4ade80; font-size: 12px; font-weight: 700; letter-spacing: 1.2px; animation: titleGlow 3.2s ease-in-out infinite; }}
     .stat-code {{ fill: #f1f5f9; font-size: 12.5px; font-weight: 700; }}
-    .stat-hint {{ fill: #64748b; font-size: 10px; font-weight: 600; }}
     .stat-val {{ fill: #4ade80; font-size: 11.5px; font-weight: 700; }}
     .lang-name {{ fill: #e2e8f0; font-size: 12px; font-weight: 600; }}
     .lang-pct {{ fill: #94a3b8; font-size: 11px; font-weight: 600; }}
