@@ -12,6 +12,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: update-rpg-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   update-rpg:
     runs-on: ubuntu-latest
@@ -42,5 +46,6 @@ jobs:
             echo "No changes to rpg-profile.svg"
           else
             git commit -m "chore: update rpg-profile.svg"
+            git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"
             git push
           fi
